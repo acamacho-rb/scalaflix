@@ -21,12 +21,8 @@ trait FilmValidations extends Validations {
     }
 
   def validateFilmRequest(filmDTO: FilmDTO): ValidationResult[FilmDTO] = {
-
-    val validationErrorItems = validateDescription(filmDTO.description) |+|
-      validateName(filmDTO.name) |+|
-      validateGenres(filmDTO.genres)
-
-    validationErrorItems.toValidationResult(filmDTO)
+    // TODO Implement this method
+    ???
   }
 
   private def validateDescription(description: String): ValidatedNel[ValidationErrorItem, Unit] =

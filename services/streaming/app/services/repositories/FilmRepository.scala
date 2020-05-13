@@ -37,11 +37,9 @@ class FilmRepository @Inject()(
       .map(this.groupWithGenres)
 
   def save(film: Film, genres: List[Genre]): DBIO[Film] = {
-    for {
-      filmId <- this.table.returning(this.table.map(_.id)) += film
-      _      <- this.filmXGenreTable ++= genres.map(genre => (filmId, genre))
-    } yield film.copy(id = Some(filmId))
-  }.transactionally
+    // TODO Implement this method
+    ???
+  }
 
   def makeAvailable(id: Long, duration: Long): DBIO[Int] =
     this.table

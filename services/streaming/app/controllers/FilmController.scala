@@ -49,10 +49,8 @@ class FilmController @Inject()(
     * Create Film
     */
   def createFilm: Action[FilmDTO] = Action.async(circe.json[FilmDTO]) { implicit request =>
-    implicit val mmc: MapMarkerContext = MapMarkerContext()
-    val film: FilmDTO                  = request.body.copy(id = None)
-    logger.info(s"Creating Film: ${request.body.asJson.noSpaces}")
-    filmService.save(film).toCreatedResult
+    // TODO Implement this method
+    ???
   }
 
   /**
